@@ -11,54 +11,64 @@
 
 <body class="bg-slate-950 text-white">
 
-    <nav class="bg-black dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+    <nav class="bg-black dark:bg-gray-900  w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
             <div class="navbar-LOGO">
-                <a href="https://flowbite.com/" class="flex items-center">
+                <a href="index.html" class="flex items-center">
                     <img src="img/logogb.png" class="h-8 mr-3" alt="Flowbite Logo">
                 </a>
             </div>
             <div class="flex md:order-2">
                 <div class="navbar-cart">
-                    <a href="https://flowbite.com/" class="flex items-center">
-                        <img src="img/shopping-cart_4225735.png" class="h-8 mr-3" alt="Flowbite Logo">
+                    <a href="#" class="flex items-center" id="cart-toggle">
+                        <img src="img/shopping-cart_4225735.png" class="h-8 mr-3" alt="Cart Icon">
                     </a>
                 </div>
+                <div id="cart-sidebar" class="sidebar bg-white shadow-lg w-72 fixed top-0 right-0 h-full overflow-y-auto transform translate-x-full transition-transform ease-in-out duration-300">
+                    <nav class="bg-gray-800 py-4 px-2">
+                        <ul class="flex  w-full justify-between">
+                            <li class="mr-4"><a href="#" class="text-white font-semibold">Name </a></li>
+                            <li class="mr-4"><a href="#" class="text-white font-semibold">Quantity </a></li>
+                            <li><a href="#" class="text-white font-semibold ">Price</a></li>
+                        </ul>
+                    </nav>
+                    <p id="total-price" class="text-white px-4 py-2 my-4  rounded-md items-center bg-blue-600 text-center  w-full"></p>
+                         <div class="flex justify-between flex-wrap ">
+                            <button id="clearCartBtn" class="bg-red-500 text-white px-4 py-2 mt-4 rounded-md ml-4">Clear Cart</button>
+                            <a href="custom.html" id="validateCommandBtn" class="bg-green-500 text-white px-4 py-2 mt-4 mx-6 rounded-md ml-4">Validation</a>
+                            
+                         </div>
+                       
+                    <div id="pro" class="mt-6">
+
+                    </div>
+                </div>
                 <div class="brg-menu">
-                    <button data-collapse-toggle="navbar-sticky" type="button"
-                        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                        aria-controls="navbar-sticky" aria-expanded="false">
+                    <button id="burger-menu" type="button" class="transition duration-300 ease-in-out inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
-                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
-                            viewBox="0 0 17 14">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M1 1h15M1 7h15M1 13h15" />
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
                         </svg>
                     </button>
+                    
                 </div>
             </div>
-            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
-                <ul
-                    class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                    <li>
-                        <a href="#"
-                            class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                            aria-current="page">Home</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Services</a>
-                    </li>
-                    <li>
-                        <a href="#"
-                            class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
-                    </li>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 transition duration-300 ease-in-out" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                  <li>
+                    <a href="index.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Home</a>
+                  </li>
+                  <li>
+                    <a href="catalogue.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"> Categorie</a>
+                  </li>
+                  <li>
+                    <a href="about.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                  </li>
+                  <li>
+                    <a href="contact.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                  </li>
                 </ul>
-            </div>
+              </div>
         </div>
     </nav>
 
@@ -104,15 +114,7 @@
 
         <img src="img/right-arrow.png" alt="" id="nextPage" class="h-5 self-center cursor-pointer">
     </div>
-
-
-
-
-
-
-
-
-    <footer class=" bg-gray-900  relative text-black-200 ">
+    <footer class=" bg-gray-900   text-black-200  bottom-0 w-full bg-gray-800 text-white p-0	">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-12">
                 <div class="col-span-12">
@@ -120,13 +122,12 @@
                         <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
                             <div class="lg:col-span-4 md:col-span-12">
                                 <a href="#" class="text-[22px] focus:outline-none">
-                                    <img class="h-12" src="img/colorfilter.png" />
+                                    <img class="h-12"
+                                        src="img/colorfilter.png"/>
                                 </a>
-                                <p class="mt-6 text-gray-300">
-                                    Discover a world of gaming excellence at your fingertips with our premium gaming PCs
-                                    and accessories
-                                </p><br>
-                                <p>Gamebit 2023</p>
+                                <p class="mt-6 text-gray-300 w-1/3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates beatae, ea quasi quod et asperiores tenetur rem, nobis, similique quia possimus mollitia pariatur sit? Quasi.</p>
+                                <br>
+                                <p class="mt-6 text-gray-300 ">Gamebit 2023</p>
                                 <ul class="list-none mt-6">
                                     <li class="inline">
                                         <a href=""
@@ -169,13 +170,10 @@
                                         </a>
                                     </li>
                                 </ul>
-                                <!--end icon-->
                             </div>
-                            <!--end col-->
-
                             <div class="lg:col-span-2 md:col-span-4">
                                 <h5 class="tracking-[1px] text-gray-100 font-semibold">
-                                    Pages
+                                  Pages
                                 </h5>
                                 <ul class="list-none  mt-6">
                                     <li>
@@ -195,11 +193,9 @@
                                     </li>
                                 </ul>
                             </div>
-                            <!--end col-->
-
-                            <div class="lg:col-span-3 md:col-span-4">
+                            <div style="color: azure;" class="lg:col-span-3 md:col-span-4">
                                 <h5 class="tracking-[1px] text-gray-100 font-semibold">
-                                    Interested
+                                   Interested
                                 </h5>
                                 <ul class="list-none  mt-6">
                                     <li>
@@ -220,255 +216,66 @@
                                 </ul>
                             </div>
                             <div class="lg:col-span-3 md:col-span-4">
-                                <h5 class="tracking-[1px] text-gray-100 font-semibold">
-                                    Payment method
-                                </h5>
-                                <ul class="list-none  mt-6">
-                                    <li>
-                                        <a href="#"
-                                            class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out">
-                                            VISA</a>
-                                    </li>
-                                    <li class="mt-[10px]">
-                                        <a href="#"
-                                            class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out">
-                                            MASTERCARD</a>
-                                    </li>
-                                    <li class="mt-[10px]">
-                                        <a href="#"
-                                            class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out">
-                                            PAYPAL</a>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <!--end col-->
+                              <h5 class="tracking-[1px] text-gray-100 font-semibold">
+                                Payment method
+                              </h5>
+                              <ul class="list-none  mt-6">
+                                  <li>
+                                      <div class="bruh">
+                                      <a href="#"
+                                          class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"><img class="payment" src="img/icons8-visa-50.png">
+                                      </a>
+                                      <span style="color: azure;">VISA
+                                      </span>
+                                      </div>
+                                  </li>
+                                  <li class="mt-[10px]">
+                                      <div class="bruh">
+                                      <a href="#"
+                                          class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"><img class="payment" src="img/icons8-mastercard-logo-50.png">
+                                      </a>
+                                      <span style="color: azure;">VISA
+                                  </div>
+                                  </li>
+                                  <li class="mt-[10px]">
+                                      <div class="bruh">
+                                      <a href="#"
+                                          class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"><img class="payment" src="img/icons8-paypal-50.png">
+                                      </a>
+                                      <span style="color: azure;">VISA
+                                  </div>
+                                  </li>
+                              </ul>
+                          </div>
                         </div>
-                        <!--end grid-->
-                    </div>
-                    <!--end col-->
-                </div>
-            </div>
-            <!--end grid-->
-        </div>
-        <!--end container-->
-
-        <div class="py-7 px-0 border-t border-gray-800">
-            <div class="container mx-auto px-6 text-center">
-                <div class="grid md:grid-cols-2 items-center">
-                    <div class="md:text-left text-center">
-                        <p class="mb-0">
-                            &copy;2023
-                            TailwindSnippets Team
-                        </p>
                     </div>
                 </div>
-                <!--end grid-->
             </div>
-            <!--end container-->
         </div>
-    </footer>
+        
+        
+          <div class="py-7 px-0 border-t bg-violet-600 ">
+              <div class="container mx-auto px-6 text-center">
+                  
+                      <div class="w-full text-center flex justify-between">
+                          <p class="mb-0">
+                              &copy;2023
+                              TailwindSnippets Team
+                          </p>
+                          <div class="flex justify-center flex-wrap gap-10">
+                              <a href="index.html">Terms of Service</a>
+                              <a href="index.html">Privacy Police</a>
+                              <a href="index.html">Cookies</a>
+                              
+      
+                          </div>
+                      </div>            
+              </div>
+          </div>
+        </footer>      
+<script src="yassine.js"></script>
+<script src="panier.js"></script>
 
-<script src="script.js"></script>
-
-    <script>
-
-
-        // document.addEventListener('DOMContentLoaded', function () {
-        //     const categoryLinks = document.querySelectorAll('.categories a');
-        //     const cards = document.querySelectorAll('.cards .card');
-
-        //     const itemsPerPage = 6;
-        //     let currentPage = 1;
-
-        //     function updatePagination() {
-        //         const startIndex = (currentPage - 1) * itemsPerPage;
-        //         const endIndex = startIndex + itemsPerPage;
-
-
-        //         cards.forEach(function (card, index) {
-        //             if (index >= startIndex && index < endIndex) {
-        //                 card.style.display = 'block';
-        //             } else {
-        //                 card.style.display = 'none';
-        //             }
-        //         });
-        //     }
-
-        //     categoryLinks.forEach(function (categoryLink) {
-        //         categoryLink.addEventListener('click', function (event) {
-        //             event.preventDefault();
-
-        //             const selectedCategory = categoryLink.getAttribute('data-category');
-
-        //             categoryLinks.forEach(function (link) {
-        //                 link.classList.remove('active');
-        //             });
-
-        //             categoryLink.classList.add('active');
-
-        //             cards.forEach(function (card) {
-        //                 const cardCategory = card.getAttribute('data-category');
-        //                 if (selectedCategory === cardCategory) {
-        //                     card.style.display = 'block';
-        //                 } else {
-        //                     card.style.display = 'none';
-        //                 }
-        //             });
-
-        //             currentPage = 1;
-        //             updatePagination();
-        //             updatePageNumberClass();
-        //             updateButtonVisibility();
-        //         });
-        //     });
-
-        //     const nextPageButton = document.getElementById('nextPage');
-        //     const prevPageButton = document.getElementById('prevPage');
-
-        //     nextPageButton.addEventListener('click', function () {
-        //         if (currentPage < numberedPages.length) {
-        //             currentPage++;
-        //             updatePagination();
-        //             updatePageNumberClass();
-        //             updateButtonVisibility();
-        //         }
-        //     });
-
-        //     prevPageButton.addEventListener('click', function () {
-        //         if (currentPage > 1) {
-        //             currentPage--;
-        //             updatePagination();
-        //             updatePageNumberClass();
-        //             updateButtonVisibility();
-        //         }
-        //     });
-
-        //     // Implement pagination controls (numbered pages)
-        //     const numberedPages = document.querySelectorAll('.pagination [data-page]');
-        //     numberedPages.forEach(function (page) {
-        //         page.addEventListener('click', function () {
-        //             const pageNumber = parseInt(page.getAttribute('data-page'));
-        //             if (pageNumber) {
-        //                 currentPage = pageNumber;
-        //                 updatePagination();
-        //                 updatePageNumberClass();
-        //                 updateButtonVisibility();
-        //             }
-        //         });
-        //     });
-
-        //     // Function to update page number classes
-        //     function updatePageNumberClass() {
-        //         numberedPages.forEach(function (page) {
-        //             const pageNumber = parseInt(page.getAttribute('data-page'));
-        //             if (pageNumber === currentPage) {
-        //                 page.classList.add('bg-violet-500');
-        //             } else {
-        //                 page.classList.remove('bg-violet-500');
-        //             }
-        //         });
-        //     }
-        //     // Function to update button visibility
-        //     function updateButtonVisibility() {
-        //         if (currentPage === 1) {
-        //             prevPageButton.style.display = 'none';
-        //         } else {
-        //             prevPageButton.style.display = 'inline';
-        //         }
-
-        //         if (currentPage === numberedPages.length) {
-        //             nextPageButton.style.display = 'none';
-        //         } else {
-        //             nextPageButton.style.display = 'inline';
-        //         }
-        //     }
-        //     // Function to update categorie bg
-
-        //     function updateCategoryClass(selectedCategory) {
-        //         const categoryLinks = document.querySelectorAll('.categories a');
-
-        //         categoryLinks.forEach(function (categoryLink) {
-        //             const category = categoryLink.getAttribute('data-category');
-
-        //             if (category === selectedCategory) {
-        //                 categoryLink.classList.add('bg-violet-500');
-        //                 categoryLink.classList.add('border-white');
-
-        //             } else {
-        //                 categoryLink.classList.remove('bg-violet-500');
-        //                 categoryLink.classList.remove('border-white');
-
-        //             }
-        //         });
-        //     }
-
-        //     // Call the function when a category link is clicked to update its class
-        //     categoryLinks.forEach(function (categoryLink) {
-        //         categoryLink.addEventListener('click', function (event) {
-        //             event.preventDefault();
-        //             const selectedCategory = categoryLink.getAttribute('data-category');
-        //             categoryLinks.forEach(function (link) {
-        //                 link.classList.remove('active');
-        //             });
-        //             categoryLink.classList.add('active');
-        //             updateCategoryClass(selectedCategory); // Call the function
-        //             // ... your other code for filtering and pagination
-        //         });
-        //     });
-
-        //     // Initial pagination setup
-        //     updatePagination();
-        //     updatePageNumberClass();
-        //     updateButtonVisibility();
-        // });
-
-
-
-
-        // /////////////////////////////////////////////////////
-        // document.addEventListener('DOMContentLoaded', function () {
-        //     const categoryLinks = document.querySelectorAll('.categories a');
-        //     const cards = document.querySelectorAll('.cards .card');
-        //     const pagination = document.querySelector('.pagination');
-
-        //     categoryLinks.forEach(function (categoryLink) {
-        //         categoryLink.addEventListener('click', function (event) {
-        //             event.preventDefault();
-
-        //             const selectedCategory = categoryLink.getAttribute('data-category');
-
-        //             categoryLinks.forEach(function (link) {
-        //                 link.classList.remove('active');
-        //             });
-
-        //             categoryLink.classList.add('active');
-
-        //             cards.forEach(function (card) {
-        //                 const cardCategory = card.getAttribute('data-category');
-        //                 if (selectedCategory === cardCategory) {
-        //                     card.style.display = 'block';
-        //                     pagination.style.display = 'none';
-        //                 }else if(selectedCategory === 'all'){
-        //                 pagination.style.display = 'flex';
-        //                 updatePagination();
-
-        //                 } else {
-        //                     card.style.display = 'none';
-        //                 }
-        //             });
-        //         });
-        //     });
-        // });
-
-
-        ///////////////////////////////////////////////////////////////
-
-
-
-
-
-    </script>
 </body>
 
 </html>

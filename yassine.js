@@ -1,20 +1,17 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const menuToggle = document.getElementById("menu-toggle");
-    const navigationLinks = document.getElementById("navbar-sticky");
-    
-    menuToggle.addEventListener("click", function () {
-        navigationLinks.classList.toggle("hidden"); 
-    });
+document.getElementById('burger-menu').addEventListener('click', function() {
+    const navbarSticky = document.getElementById('navbar-sticky');
+    navbarSticky.classList.toggle('hidden');
+    navbarSticky.classList.toggle('md:flex');
+    navbarSticky.classList.toggle('transition-active'); 
 });
+
 // *********************************************************************************
 const cartToggle = document.getElementById("cart-toggle");
 const cartSidebar = document.getElementById("cart-sidebar");
 const closeCart = document.getElementById("close-cart");
 
 cartToggle.addEventListener("click", function (e) {
-    e.stopPropagation(); // Prevent the click event from reaching the document
-
-    // Toggle the cart sidebar
+    e.stopPropagation(); 
     cartSidebar.classList.remove("translate-x-full");
 });
 
