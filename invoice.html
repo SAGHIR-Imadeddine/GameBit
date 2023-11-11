@@ -1,0 +1,172 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,800;1,200&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        @media (max-width: 800px) {
+            #table-intro{
+                font-size: 1rem;
+            }
+            #table{
+                font-size: 10px;
+            }
+            #total{
+                font-size: 0.9rem;
+            }
+            #invoice{
+                font-size: 2rem;
+            }
+    
+        }
+
+
+        @media (max-width: 550px) {
+            #invoice{
+                font-size: 2rem;
+            }
+            #table-intro{
+                font-size: 0.7rem;
+            }
+            #table{
+                font-size: 6px;
+            }
+            #total{
+                font-size: 0.5rem;
+                
+            }
+            #company-client{
+                font-size: 10px;
+            }
+            #HT,#VAT{
+                font-size: 0.4rem;
+            }
+            #bttn1, #bttn2{
+                width: 100px;
+            }
+        
+        }
+    </style>
+</head>
+<body class="bg-zinc-200">
+    <!-- logo&invoice -->
+
+<section class="w-4/5 ml-[10%] mt-4 border-2 border-solid border-gray-400">
+
+  <section class="flex justify-between p-4" >
+    <div><img src="./img/logogb.png" alt="GameBit logo"></div>
+    <div><h1 id="invoice" class=" p-4 text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">Invoice</h1></div>
+  </section>
+  
+  <!-- company&client -->
+  
+  <section id="company-client" class="flex justify-between p-4 w-11/12" style="margin-left: 2%;">
+    <div class="flex flex-col">
+        <span>GameBit</span>
+        <span>+212 000 00 00 00</span>
+        <span>01,adress,adress,City</span>
+        <span>game.bit@mail.com</span>
+    </div>
+    <div class="flex flex-col">
+        <span>Bill to :</span>
+        <span>client name</span>
+        <span>75,adress,adress,city</span>
+    </div>
+  </section>
+
+  <!-- invoice data -->
+
+  <section id="table-intro" class="flex justify-between  w-11/12 text-white h-10 text-3xl max-[1000]" style="margin-left: 3%; ">
+    <div class="w-1/4 text-center" style="background-color: #C116A0; border-right: 2px solid #D9D9D9;"><span>Safi</span></div>
+    <div class="w-1/4 text-center" style="background-color: #C116A0; border-right: 2px solid #D9D9D9;"><span  class="dateI">jj/mm/yyyy</span></div>
+    <div class="w-1/4 text-center" style="background-color: #C116A0; border-right: 2px solid #D9D9D9;"><span id="itemsNumber">6 items</span></div>
+    <div class="w-1/4 text-center" style="background-color: #5C0BCA;"><span id="bigTotal">2037,6$</span></div>
+
+  </section>
+  
+  <section id="print-intro" class="flex justify-between font-bold w-11/12 ml-[3%] text-black text-sm hidden">
+    <div class="flex  gap-10">
+        <span>Created in :</span>
+        <span>Safi</span>
+    </div>
+    <div class="flex gap-10">
+        <span>Invoice Date : </span>
+        <span id="printTime">jj/mm/yyyy</span>
+    </div>
+  </section>
+
+  <!-- table -->
+
+  <section id="table" class=" w-11/12 ml-[3%] mt-6">
+    <table class="table-auto w-full ">
+        <thead>
+          <tr class="text-left" style="background-color: #D9D9D9;">
+            <th>item</th>
+            <th class="text-right">quantity</th>
+            <th class="text-right">uniet price</th>
+            <th class="text-right">total net</th>
+            <th class="text-right">VAT(20%)</th>
+            <th class="text-right">total gross</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+    
+        </tbody>
+      </table>
+  </section>
+
+  <!-- total -->
+
+  <section class="w-11/12 ml-[5%] mt-4">
+    <div class="w-2/5 flex flex-col ml-[58%] gap-2 ">
+        <div id="HT" class="flex justify-between opacity-50 text-xs">
+            <span>Total HT</span>
+            <span id="Tht">1.698&dollar;</span>
+        </div>
+        <div id="VAT" class="flex justify-between opacity-50 text-xs">
+            <span>VAT amount(20%)</span>
+            <span id="VatA">339,6&dollar;</span>
+        </div>
+        <div id="total" class="flex justify-between text-white text-lg p-[5px] mt-2 mb-2" style="background-color: #C116A0;">
+            <span>Total gross</span>
+            <span id="TG">2.037,6&dollar;</span>
+        </div>
+    </div>
+
+  </section>
+</section>
+
+  <!-- buttons -->
+
+  <div class="mt-6 flex justify-center gap-12 text-white">
+    <button id="bttn1" class="w-[200px] h-8" style="background-color: #F81D8B;border-radius: 8px;">Print invoice</button>
+    <button id="bttn2" class="w-[200px] h-8" style="background-color: #5C0BCA;border-radius: 8px;">Confirm</button>
+  </div>
+
+  <div id="poppup" class="hidden">
+    <h4>Thank you for trusting GameBit</h4>
+    <span>Your order was completed successfully</span>
+
+We'll send a confir
+
+    <p>An Email receipt including the details about your order has ben sent to the Email adress you provided. Please keep it for your records</p>
+
+  </div>
+
+  <!-- backhome -->
+  <div class="text-end mt-6">
+    <a id="backHome" href="" class="pr-3 underline italic text-[10px] sm:text-base">go back home &rarr;</a>
+  </div>
+  <script src="devis.js"></script>
+</body>
+</html>

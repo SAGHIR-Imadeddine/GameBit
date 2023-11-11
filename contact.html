@@ -1,0 +1,167 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,800;1,200&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="faq.js" defer></script> -->
+    <script src="contact.js" defer></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        .faq.active .answer{
+            max-height: 300px;
+
+        } 
+
+        .faq.active i{
+            transform: rotate(180deg);
+        }
+
+        .question i{
+            transition: transform 0.7s ease;
+        }
+        .form-controle.valid input{
+            border: 2px solid #30df33;
+        }
+       
+        .form-controle.valid small{
+            visibility: hidden;
+        }
+        .form-controle.valid .fa-circle-exclamation{
+            display: none;
+        }
+        .form-controle.valid .fa-circle-check{
+            visibility: visible;
+        }
+      
+        .form-controle.nonValid small{
+            visibility: visible;
+        }
+        .form-controle.nonValid .fa-circle-exclamation{
+            visibility: visible;
+        }
+
+        .form-controle.nonValid input{
+            border: 2px solid #ff2e2e;
+        }
+        .form-controle.nonValid .fa-circle-check{
+            display: none;
+        }
+    </style>
+</head>
+<body style="background-color: #030a1b; color: aliceblue;">
+
+    <!------------------ NAV BAR --------------------->
+    
+    
+    <!------------------ NAV BAR --------------------->
+    <section class="w-11/12 ml-[5%] mt-4">
+        <h1 class="text-6xl">HOW CAN WE HELP?</h1>
+        <div class="flex justify-around items-center gap-12 flex-wrap w-[100%]">
+            <div class="w-[40%] min-w-[300px]">
+                <h3 class="mt-10 text-3xl">Contact Us</h3>
+                <div class="flex flex-col mt-10 w-full">
+                    <span>game.bit@mail.com</span>
+                    <span>+212 000 00 00 00</span>
+                    <span>01, adress, adress, City</span>
+                </div>
+                <div class="mt-6"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42770867.77442138!2d159.61561790000007!3d49.13362539999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x5484331a433729d7%3A0x9b5495a848c925a8!2sGame-Bit!5e0!3m2!1sfr!2sma!4v1699025988587!5m2!1sfr!2sma" width="100%" height="300" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div>
+            </div>
+
+            <form id="form" class=" w-[40%] min-w-[300px] flex flex-col self-end">
+                <div class="flex w-full justify-between">
+                    <div class="flex flex-col w-[50%] form-controle ">
+                        <label>Full name</label>
+                        <input  id="fullName" type="text" placeholder="name family-name" class="rounded-t-2xl border-2 border-violet-700 bg-transparent h-12">
+                        <div class="flex justify-between invisible">
+                            <small class="text-red-600 ">error</small>
+                            <div>
+                                <i class="fa-solid fa-circle-check" style="color: #30df33;"></i>
+                                <i class="fa-solid fa-circle-exclamation" style="color: #ff2e2e;"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col w-[45%] form-controle">
+                        <label>Phone number</label>
+                        <input  id="number" type="text" placeholder="+212 000 00 00 00" class="rounded-t-2xl border-2 border-violet-700 bg-transparent h-12">
+                        <div class="flex justify-between invisible">
+                            <small class="text-red-600 ">error</small>
+                            <div>
+                                <i class="fa-solid fa-circle-check" style="color: #30df33;"></i>
+                                <i class="fa-solid fa-circle-exclamation" style="color: #ff2e2e;"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col form-controle">
+                    <label >Your Email</label>
+                    <input  id="email" type="text" placeholder="example@mail.co" class="rounded-t-2xl border-2 border-violet-700 bg-transparent h-12">
+                    <div class="flex justify-between invisible">
+                            <small class="text-red-600 ">error</small>
+                            <div>
+                                <i class="fa-solid fa-circle-check" style="color: #30df33;"></i>
+                                <i class="fa-solid fa-circle-exclamation" style="color: #ff2e2e;"></i>
+                            </div>
+                    </div>
+                </div>
+                <label class="mt-4">Subject</label>
+                <input type="text" class="rounded-t-2xl border-2 border-violet-700 bg-transparent h-12">
+                <label class="mt-4">Message</label>
+                <textarea required minlength="30" id="message" placeholder="message (30 characters+)" class="border-2 border-violet-700 bg-transparent" id="" cols="30" rows="6"></textarea>
+                <div class="w-full bg-violet-700 rounded-b-2xl h-10 form-controle"><button type="submit" class="w-full h-10 align-middle">Send</button></div>
+            </form>
+        </div>
+    </section>
+
+    <section class="w-full mt-12 mb-6" style="background-color: #8C5CEC;">
+        <h3 class="text-center pt-6 text-3xl">F.A.Q</h3>
+        <div  class="w-1/2 ml-[25%]  min-w-[300px] mt-10">
+            <div class="faq border-b-2 border-gray-50 p-4">
+                <div class="question flex justify-between cursor-pointer">
+                    <h4 class="text-gray-950">How do I add a new question & answer?</h4>
+                    <i class="fa-solid fa-angle-down" style="color: #000000;"></i>
+                </div>
+                <div class="answer max-h-0 overflow-hidden">
+                    <p class="pt-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, esse! Minus ut optio odit, blanditiis distinctio fuga quod. Maiores, saepe.</p>
+                </div>
+            </div>
+
+            <div class="faq mt-2 border-b-2 border-gray-50 p-4">
+                <div class="question flex justify-between cursor-pointer">
+                    <h4 class="text-gray-950">How do I add a new question & answer?</h4>
+                    <i class="fa-solid fa-angle-down" style="color: #000000;"></i>
+                </div>
+                <div class="answer max-h-0 overflow-hidden">
+                    <p class="pt-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, esse! Minus ut optio odit, blanditiis distinctio fuga quod. Maiores, saepe.</p>
+                </div>
+            </div>
+            
+            <div class="faq mt-2 p-4">
+                <div class="question flex justify-between cursor-pointer">
+                    <h4 class="text-gray-950">How do I add a new question & answer?</h4>
+                    <i class="fa-solid fa-angle-down" style="color: #000000;"></i>
+                </div>
+                <div class="answer max-h-0 overflow-hidden">
+                    <p class="pt-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae, esse! Minus ut optio odit, blanditiis distinctio fuga quod. Maiores, saepe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+</body>
+</html>
