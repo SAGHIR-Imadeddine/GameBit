@@ -32,7 +32,13 @@
                     <p id="total-price" class="text-white px-4 py-2 my-4  rounded-md items-center bg-blue-600 text-center  w-full"></p>
                          <div class="flex justify-between flex-wrap ">
                             <button id="clearCartBtn" class="bg-red-500 text-white px-4 py-2 mt-4 rounded-md ml-4">Clear Cart</button>
-                            <a href="custom.html" id="validateCommandBtn" class="bg-green-500 text-white px-4 py-2 mt-4 mx-6 rounded-md ml-4">Validation</a>  
+                            <button id="btn2" class="bg-green-500 text-white px-4 py-2 mt-4 mx-6 rounded-md ml-4" onclick="openPopup()">Validation</button>
+                            <div id="popup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                                <div class="popup-content bg-gray-300 p-6 rounded-md">
+                                    <h2 class="text-lg">Thank you for choosing Us</h2>
+                                    <button onclick="closePopup()" class="w-1/4 mt-4 bg-red-500 text-white py-2 rounded-md">Cancel</button>
+                                </div>
+                            </div>    
                          </div>
                        
                     <div id="pro" class="mt-6">

@@ -442,54 +442,6 @@ products.forEach(product => {
 
 })
 });
-// document.addEventListener('DOMContentLoaded', () => {
-//     // Your existing code...
-
-//     const validateCommandBtn = document.getElementById('validateCommandBtn');
-//     validateCommandBtn.addEventListener('click', validateCommand);
-// });
-// function validateCommand() {
-//     const panier = getPanier(); // Assuming you have a getPanier function defined
-
-//     if (panier.length > 0) {
-//         const form = document.createElement('form');
-//         form.method = 'post'; // Use POST method to send data
-//         form.action = 'custom.html'; // Replace with your destination URL
-
-//         // Create hidden input fields to pass the panier data
-//         panier.forEach(product => {
-//             const productIdInput = document.createElement('input');
-//             productIdInput.type = 'hidden';
-//             productIdInput.name = 'product_ids[]'; // Use an array to send multiple product IDs
-//             productIdInput.value = product.id;
-//             form.appendChild(productIdInput);
-
-//             const productNameInput = document.createElement('input');
-//             productNameInput.type = 'hidden';
-//             productNameInput.name = 'product_names[]'; // Use an array to send multiple product names
-//             productNameInput.value = product.name;
-//             form.appendChild(productNameInput);
-
-//             const productQuantityInput = document.createElement('input');
-//             productQuantityInput.type = 'hidden';
-//             productQuantityInput.name = 'product_quantities[]'; // Use an array to send multiple product quantities
-//             productQuantityInput.value = product.quantity;
-//             form.appendChild(productQuantityInput);
-
-//             const productPriceInput = document.createElement('input');
-//             productPriceInput.type = 'hidden';
-//             productPriceInput.name = 'product_prices[]'; // Use an array to send multiple product prices
-//             productPriceInput.value = product.price;
-//             form.appendChild(productPriceInput);
-//         });
-
-//         document.body.appendChild(form);
-//         form.submit(); // Submit the form to navigate to the checkout page
-//     } else {
-//         alert('Your panier is empty. Add products before validating the command.');
-//     }
-// }
-
 document.addEventListener('DOMContentLoaded', () => {
     const cartSidebar = document.getElementById('pro');
     const panier = getPanier();
@@ -613,22 +565,38 @@ function updateCartSidebar() {
     updateTotalPrice(); 
 }
 document.addEventListener('DOMContentLoaded', () => {
-    updateCartSidebar(); // Update the cart sidebar on page load
+    updateCartSidebar(); 
 });
 function updateTotalPrice() {
     const total = getTotalPrice();
     const totalElement = document.getElementById('total-price');
     totalElement.innerHTML = `Total: $${total.toFixed(2)}`;
 }
+let popup = document.getElementById("popup");
 
-document.getElementById('clearCartBtn').addEventListener('click', function() {
-    // Clear the cart sidebar
-    const cartSidebar = document.getElementById('pro');
-    cartSidebar.innerHTML = '';
+    function openPopup() {
+        popup.style.display = 'flex';
+        const cartSidebar = document.getElementById('pro');
+        const totalsidebar = document.getElementById('total-price');
+    
+        cartSidebar.innerHTML = '';
+         totalsidebar.innerHTML = '$0.00';
+    
+        // Clear the cart data in local storage
+        localStorage.removeItem('panier');
+        console.log("khadam");
+    }
 
-    // Clear the cart data in local storage
-    localStorage.removeItem('panier');
-});
+    function closePopup() {
+        popup.style.display = 'none';
+        console.log("conge");
+    }
+// document.getElementById('clearCartBtn').addEventListener('click', function() {
+//             // Clear the cart
+           
+//     // Clear the cart sidebar
+    
+// });
 
 
 function removeFromPanier(product){
