@@ -462,8 +462,9 @@ document.addEventListener('DOMContentLoaded', () => {
         cartSidebar.appendChild(productDiv);
     });
 
-    updateTotalPrice(); // Update the total price in the cart
+    updateTotalPrice();
 });
+
 const totalElement = document.getElementById('total-price');
 function updateTotalPrice() {
     const total = getTotalPrice();
@@ -486,7 +487,7 @@ function addPanier(product) {
     let foundProduct = panier.find(p => p.id == product.id);
     if (foundProduct != undefined) {
         foundProduct.quantity++;
-        updateCartSidebar(); // Update the cart sidebar with new quantity
+        updateCartSidebar();
         savePanier(panier);
     } else {
         product.quantity = 1;
