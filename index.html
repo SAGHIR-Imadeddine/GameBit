@@ -4,10 +4,405 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./styte.css">
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+<body class="flex flex-col min-h-screen" style="background-color: #040c20;">
+  
+    <nav class="bg-black dark:bg-gray-900  w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <div class="navbar-LOGO">
+                <a href="index.html" class="flex items-center">
+                    <img src="img/logogb.png" class="h-8 mr-3" alt="gamebit Logo">
+                </a>
+            </div>
+            <div class="flex md:order-2">
+                <div class="navbar-cart">
+                    <a href="#" class="flex items-center" id="cart-toggle">
+                        <img src="img/shopping-cart_4225735.png" class="h-8 mr-3" alt="Cart Icon">
+                    </a>
+                </div>
+                <div id="cart-sidebar" class="sidebar bg-white shadow-lg w-72 fixed top-0 right-0 h-full overflow-y-auto transform translate-x-full transition-transform ease-in-out duration-300">
+                    <nav class="bg-gray-800 py-4 px-2">
+                        <ul class="flex  w-full justify-between">
+                            <li class="mr-4"><a href="#" class="text-white font-semibold">Name </a></li>
+                            <li class="mr-4"><a href="#" class="text-white font-semibold">Quantity </a></li>
+                            <li><a href="#" class="text-white font-semibold ">Price</a></li>
+                        </ul>
+                    </nav>
+                    <p id="total-price" class="text-white px-4 py-2 my-4  rounded-md items-center bg-blue-600 text-center  w-full"></p>
+                         <div class="flex justify-between flex-wrap ">
+                          <button id="devis" class="bg-red-500 text-white px-4 py-2 mt-4 rounded-md ml-4"><a href="invoice.html" > Devis</a></button>
+                            <button id="btn2" class="bg-green-500 text-white px-4 py-2 mt-4 mx-6 rounded-md ml-4" onclick="openPopup()">Validation</button>
+                            <div id="popup2" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                                <div class="popup-content bg-gray-300 p-6 rounded-md">
+                                    <h2 class="text-lg">Thank you for choosing Us</h2>
+                                    <button onclick="closePopup()" class="w-1/4 mt-4 bg-red-500 text-white py-2 rounded-md">Cancel</button>
+                                </div>
+                            </div>    
+                         </div>
+                       
+                    <div id="pro2" class="mt-6">
+
+                    </div>
+                </div>
+                <div class="brg-menu">
+                    <button id="burger-menu" type="button" class="transition duration-300 ease-in-out inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-sticky" aria-expanded="false">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
+                        </svg>
+                    </button>
+                    
+                </div>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 transition duration-300 ease-in-out" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                  <li>
+                    <a href="index.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700" aria-current="page">Home</a>
+                  </li>
+                  <li>
+                    <a href="catalogue.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"> Categorie</a>
+                  </li>
+                  <li>
+                    <a href="about.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</a>
+                  </li>
+                  <li>
+                    <a href="contact.html" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Contact</a>
+                  </li>
+                </ul>
+              </div>
+        </div>
+    </nav>
+
+<main class="flex-1 mt-16 py-24">
+    
+  <section class="section-1">
+  <div class="container-1 flex flex-col lg:flex-row justify-between">
+    <div class="font-sans text-white ml-4 lg:ml-16 pl-10 lg:pl-20 pt-5 lg:pt-10">
+      <h1 class="text-white text-5xl font-black font-mono">Gamebit</h1>
+      <p class="text-gray-300 max-w-md text-lg">
+        Welcome to our gaming PC shop, your ultimate destination for top-quality gaming rigs and expert advice. Whether you're a seasoned gamer or a novice, our custom-built PCs deliver unparalleled performance. Join us on an epic gaming journey today!
+      </p>
+      <div class="pt-3 lg:pt-7 pl-5 lg:pl-10">
+        <button style="background-color: #3b0764;" class=" font-bold py-4 px-8 rounded-full">
+          READ MORE
+        </button>
+      </div>
+    </div>
+    
+      <div class="mt-4 lg:mt-0 lg:ml-4 pr-28n pl-8 mx-auto lg:mx-0">
+          <img src="img/img.png" class="max-w-full">
+      </div>
+  </div>
+  </section>
+  <section class="section-2">
+      <div class="navbar-of-the-add-cart flex justify-between">
+          <div class="text-white text-2xl  py-14 px-14 ">
+              <p>Best seller</p>
+          </div>
+          <div class="px-14 py-14">
+              <button class="bg-white text-indigo-700 font-bold py-2 px-4 rounded-full ">
+                  View all
+              </button>
+          </div>
+      </div>
+      <div class="container-cart-items flex justify-evenly flex-wrap">
+      <div class="w-80 bg-transparent shadow rounded overflow-hidden">
+          <img src="img/c837a6_58812d9bb7ba47638549b64970fe3bbe~mv2 1.png" class="w-full">
+          <div class="p-4">
+              <h1 class="text-white text-center font-bold">WAVE</h1>
+              <p class="text-center text-white font-bold mt-1">€29</p>
+              <button style="background-color: #8C5CEC;" class="py-2 px-4 bg-custom-color text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
+                <a href="catalogue.html">Shop Now</a>    
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+              </button>
+          </div>
+      </div>
+      <div class="w-80 bg-transparent shadow rounded overflow-hidden">
+          <img src="img/c837a6_58812d9bb7ba47638549b64970fe3bbe~mv2 1.png" class="w-full">
+          <div class="p-4">
+              <h1 class="text-white text-center font-bold">WAVE</h1>
+              <p class="text-center text-white font-bold mt-1">€29</p>
+              <button style="background-color: #8C5CEC;" class="py-2 px-4 bg-custom-color text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
+                <a href="catalogue.html">Shop Now</a>   
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+              </button>
+          </div>
+      </div>
+      <div class="w-80 bg-transparent shadow rounded overflow-hidden">
+          <img src="img/c837a6_58812d9bb7ba47638549b64970fe3bbe~mv2 1.png" class="w-full">
+          <div class="p-4">
+              <h1 class="text-white text-center font-bold">WAVE</h1>
+              <p class="text-center text-white font-bold mt-1">€29</p>
+              <button style="background-color: #8C5CEC;" class="py-2 px-4 bg-custom-color text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
+                <a href="catalogue.html">Shop Now</a>   
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+              </button>
+          </div>
+      </div>
+      <div class="w-80 bg-transparent shadow rounded overflow-hidden">
+          <img src="img/c837a6_58812d9bb7ba47638549b64970fe3bbe~mv2 1.png" class="w-full">
+          <div class="p-4">
+              <h1 class="text-white text-center font-bold">WAVE</h1>
+              <p class="text-center text-white font-bold mt-1">€29</p>
+              <button style="background-color: #8C5CEC;" class="py-2 px-4 bg-custom-color text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
+                <a href="catalogue.html">Shop Now</a>   
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+              </button>
+          </div>
+      </div>
+  </section>
+  <section>
+    <div class="text-white text-2xl  py-14 px-14 ">
+      <p>SHOP BY CATEGORY</p>
+      <div class="container-cart-items flex flex-wrap justify-between items-center ">
+        <div class="w-80 bg-transparent shadow rounded overflow-hidden m-2">
+          <img src="img/Group 114.png" class="w-full">
+
+          <div class="p-4">
+            <h1 class="text-white text-center font-bold">Gaming Computer</h1>
+          </div>
+        </div>
+      
+        <div class="w-80 bg-transparent shadow rounded overflow-hidden m-2">
+          <img src="img/Group 132 (1).png" class="w-full">
+          <div class="p-4">
+            <h1 class="text-white text-center font-bold">Consoles</h1>
+          </div>
+        </div>
+      
+        <div class="w-80 bg-transparent shadow rounded overflow-hidden m-2">
+          <img src="img/c837a6_9a2583f0a17e48efb075913d90da0dbf~mv2 1.png" class="w-full">
+
+          <div class="p-4">
+            <h1 class="text-white text-center font-bold">Accessories</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="text-white text-2xl  py-14 px-14 ">
+      <p>DISCOUNT</p>
+  </div>
+  <div class="bg-custom-purple-8C5CEC text-white p-4 rounded-lg shadow-lg text-center">
+    <div class="flex flex-wrap items-center justify-between">
+      <div class="w-full md:w-2/3">
+        <p class="text-xl font-bold text-center">
+          SPEND & SAVE <br>
+          Save 20% when you spend more than $125
+        </p>
+        <button style="background-color: #8C5CEC;" class="bg-custom-purple-8C5CEC text-white hover:bg-pink-600 text-white font-bolder py-2 px-4 rounded-full mt-4">
+          <a href="catalogue.html">Shop Now</a>   
+        </button>
+      </div>
+      <div class="w-full md:w-1/3 mt-4 md:mt-0">
+        <img src="img/wepik-export-20231029101545kHHB 1.png" alt="Shop Now" class="w-96 h-96">
+      </div>
+    </div>
+  </div>
+  
+  
+  
+  </section>
+</main>
+<footer class=" bg-gray-900   text-black-200  bottom-0 w-full bg-gray-800 text-white p-0">
+<div class="container mx-auto px-6">
+    <div class="grid grid-cols-12">
+        <div class="col-span-12">
+            <div class="py-[60px] px-0">
+                <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
+                    <div class="lg:col-span-4 md:col-span-12">
+                        <a href="#" class="text-[22px] focus:outline-none">
+                            <img class="h-12"
+                                src="img/colorfilter.png"/>
+                        </a>
+                        <p class="mt-6 text-gray-300 w-96">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates beatae, ea quasi quod et asperiores tenetur rem, nobis, similique quia possimus mollitia pariatur sit? Quasi.</p>
+                        <br>
+                        <p class="mt-6 text-gray-300 ">Gamebit 2023</p>
+                        <ul class="list-none mt-6">
+                            <li class="inline">
+                                <a href=""
+                                    class="font-semibold tracking-wide align-middle transition duration-500 ease-in-out p-1 h-9 w-9 inline-flex items-center text-center justify-center text-sm border !border-gray-800 rounded-md hover:border-yellow-600  hover:bg-yellow-600 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-gray-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="inline">
+                                <a href=""
+                                    class="font-semibold tracking-wide align-middle transition duration-500 ease-in-out p-1 h-9 w-9 inline-flex items-center text-center justify-center text-sm border !border-gray-800 rounded-md hover:border-yellow-600  hover:bg-yellow-600 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-gray-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="inline">
+                                <a href=""
+                                    class="font-semibold tracking-wide align-middle transition duration-500 ease-in-out p-1 h-9 w-9 inline-flex items-center text-center justify-center text-sm border !border-gray-800 rounded-md hover:border-yellow-600  hover:bg-yellow-600 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-gray-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M4.98 3.5c0 1.381-1.11 2.5-2.48 2.5s-2.48-1.119-2.48-2.5c0-1.38 1.11-2.5 2.48-2.5s2.48 1.12 2.48 2.5zm.02 4.5h-5v16h5v-16zm7.982 0h-4.968v16h4.969v-8.399c0-4.67 6.029-5.052 6.029 0v8.399h4.988v-10.131c0-7.88-8.922-7.593-11.018-3.714v-2.155z" />
+                                    </svg>
+                                </a>
+                            </li>
+                            <li class="inline">
+                                <a href=""
+                                    class="font-semibold tracking-wide align-middle transition duration-500 ease-in-out p-0 h-9 w-9 inline-flex items-center text-center justify-center text-sm border !border-gray-800 rounded-md hover:border-yellow-600  hover:bg-yellow-600 ">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 fill-gray-300"
+                                        viewBox="0 0 24 24">
+                                        <path
+                                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-2 md:col-span-4">
+                        <h5 class="tracking-[1px] text-gray-100 font-semibold">
+                          Pages
+                        </h5>
+                        <ul class="list-none  mt-6">
+                            <li>
+                                <a href="#"
+                                    class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out">
+                                    Catalog</a>
+                            </li>
+                            <li class="mt-[10px]">
+                                <a href="#"
+                                    class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out">
+                                    About Us</a>
+                            </li>
+                            <li class="mt-[10px]">
+                                <a href="#"
+                                    class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out">
+                                    Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="color: azure;" class="lg:col-span-3 md:col-span-4">
+                        <h5 class="tracking-[1px] text-gray-100 font-semibold">
+                           Interested
+                        </h5>
+                        <ul class="list-none  mt-6">
+                            <li>
+                                <a href="#"
+                                    class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out">
+                                    Gaming Pc</a>
+                            </li>
+                            <li class="mt-[10px]">
+                                <a href="#"
+                                    class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out">
+                                    Consoles</a>
+                            </li>
+                            <li class="mt-[10px]">
+                                <a href="#"
+                                    class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out">
+                                    Accessories</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="lg:col-span-3 md:col-span-4">
+                      <h5 class="tracking-[1px] text-gray-100 font-semibold">
+                        Payment method
+                      </h5>
+                      <ul class="list-none  mt-6">
+                          <li>
+                              <div class="bruh">
+                              <a href="#"
+                                  class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"><img class="payment" src="img/icons8-visa-50.png">
+                              </a>
+                              <span style="color: azure;">VISA
+                              </span>
+                              </div>
+                          </li>
+                          <li class="mt-[10px]">
+                              <div class="bruh">
+                              <a href="#"
+                                  class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"><img class="payment" src="img/icons8-mastercard-logo-50.png">
+                              </a>
+                              <span style="color: azure;">VISA
+                          </div>
+                          </li>
+                          <li class="mt-[10px]">
+                              <div class="bruh">
+                              <a href="#"
+                                  class="text-gray-300 hover:text-gray-400 transition-all duration-500 ease-in-out"><img class="payment" src="img/icons8-paypal-50.png">
+                              </a>
+                              <span style="color: azure;">VISA
+                          </div>
+                          </li>
+                      </ul>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-7 px-0 border-t border-gray-800 bg-purple-600">
+  <div class="container mx-auto px-6 text-center">
+    <div class="grid md:grid-cols-2 items-center">
+      <div class="md:text-left text-center">
+        <p class="mb-0">
+          &copy;2023
+          TailwindSnippets Team
+        </p>
+      </div>
+      <div class="dude flex	justify-end cursor-pointer	">
+      <div class="md:text-left text-center">
+        <p class="mb-0 pr-8">
+          term & permession
+        </p>
+      </div>
+      <div class="md:text-left text-center">
+        <p class="mb-0">
+          Privicy policy
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</footer>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const cartSidebar = document.getElementById('pro2');
+  const panier = getPanier();
+
+  panier.forEach(product => {
+      const total = product.quantity * product.price;
+      const productDiv = document.createElement('div');
+      productDiv.className = 'p-4 border rounded-md mb-4 bg-white shadow-md ';
+      const abbreviatedName = product.name.substring(0, 3);
+      productDiv.innerHTML = `
+          <div class="flex justify-between  ">
+              <div class="text-black w-4 font-bold"title="${product.name}">${abbreviatedName}</div>
+              <div class="text-black">${product.quantity}</div>
+              <div class="text-black">$${total.toFixed(2)}</div>
+          </div>
+      `;
+
+      cartSidebar.appendChild(productDiv);
+  });
+
+  updateTotalPrice();
+});
+
+</script>
+<script src="yassine.js"></script>
+<script src="panier.js"></script>
 </body>
 </html>

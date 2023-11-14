@@ -1,0 +1,26 @@
+:root {
+    --custom-purple-8C5CEC: #c9c9c9;
+    --custom-color: #8C5CEC;
+  }
+ button{
+    background-color:var(--custom-color) ;
+ }
+
+.navbar-LOGO img{
+    width: 90px;
+    height: 50px;
+}
+h1{
+    margin-bottom: 20px;
+}
+.payment{
+    width: 30px;
+}
+.bruh{
+    display: flex;
+    gap: 15px;
+    border: 1px solid #5b5b5b;
+    width: fit-content;
+    border-radius: 200px;
+    padding: 10px 15px;
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,800;1,200&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    
+
+<div id="invoice-poppup" class="w-[60%] mt-[150px] ml-[20%]">
+    <h4 class="text-4xl my-4 font-extrabold">Thank you for trusting GameBit</h4>
+    <div id="pop-content" class="flex justify-between">
+      <div id="order-details" class="w-[69%] border-2 border-gray-600 p-2">
+          <div id="pop-intro" class="flex justify-between my-2">
+              <div class="flex flex-col gap-[5px] w-[70%] text-sm">
+                    <div class="w-[80%] flex justify-between">
+                      <span>Order date:</span>
+                      <span>yyyy/mm/jj</span>
+                    </div>
+                    <div class="w-[80%] flex justify-between">
+                      <span>customer:</span>
+                      <span>Client name</span>
+                    </div>
+                    <div class="w-[80%] flex justify-between">
+                      <span>payment method:</span>
+                      <span>cash on delivery</span>
+                    </div>
+              </div>
+              <div id="country-roads" class="w-[30%] self-end">
+                    <button class="w-full border-2 border-gray-600 "><a href="index.html">Back home</a></button>
+              </div>
+          </div>
+          <div id="pop-confirm" class="flex flex-col items-center gap-2 my-8 ">
+            <span class="text-xl font-bold">Your order was completed successfully</span>
+            <p class="text-center">An Email receipt including the details and tracking infos about your order has been sent to the Email adress you provided. Please keep it for your records</p>
+          </div>
+          
+          <div id="pop-details" class="flex justify-around my-8">
+              <div class="flex flex-col">
+                <h6>Shipping adress:</h6>
+                <span>client name</span>
+                <span>75,adress,adress,city</span>
+                <span>+212 000 00 00 00</span>
+                <span>client@mail.com</span>
+
+              </div>
+              <div class="flex flex-col">
+                <h6>Billing adress:</h6>
+                <span>client name</span>
+                <span>75,adress,adress,city</span>
+                <span>+212 000 00 00 00</span>
+                <span>client@mail.com</span>
+              </div>
+          </div>
+      </div>
+
+      <div id="order-summary" class="w-[30%] border-2 border-gray-600 p-4">
+        <h5 class="text-center">Order Summary</h5>
+        <div class="flex justify-between mt-2">
+          <span>subtotal</span>
+          <span>xxx</span>
+        </div>
+        <div class="flex justify-between mt-2">
+          <span>Shipping</span>
+          <span>Free</span>
+        </div>
+        <div class="flex justify-between mt-2">
+          <span>Tax</span>
+          <span>20%</span>
+        </div>
+        <div class="flex justify-between mt-2">
+          <span>discount</span>
+          <span>00&dollar;</span>
+        </div>
+        <div class="flex justify-between mt-2">
+          <span>Total</span>
+          <span>xxx</span>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</body>
+</html>
