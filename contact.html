@@ -83,18 +83,18 @@
                     </nav>
                     <p id="total-price" class="text-white px-4 py-2 my-4  rounded-md items-center bg-blue-600 text-center  w-full">$0.00</p>
                          <div class="flex justify-between flex-wrap ">
-                            <button id="devis" class="bg-red-500 text-white px-4 py-2 mt-4 rounded-md ml-4"><a href="invoice.html">Devis</a></button>
-                            <button id="btn2" class="bg-green-500 text-white px-4 py-2 mt-4 mx-6 rounded-md ml-4" onclick="openPopup()">Validation</button>
-                            <div id="popup" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+                            <button id="devis" class="bg-red-500 text-white px-4 py-2 mt-4 rounded-md ml-4"><a href="./invoice.html">Devis</a></button>
+                            <button id="btn5" class="bg-green-500 text-white px-4 py-2 mt-4 mx-6 rounded-md ml-4" onclick="openPopup4()">Validation</button>
+                            <div id="popup4" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center">
                                 <div class="popup-content bg-gray-300 p-6 rounded-md">
                                     <h2 class="text-lg">Thank you for choosing Us</h2>
-                                    <button onclick="closePopup()" class="w-1/4 mt-4 bg-red-500 text-white py-2 rounded-md">Cancel</button>
+                                    <button onclick="closePopup4()" class="w-1/4 mt-4 bg-red-500 text-white py-2 rounded-md">Cancel</button>
                                 </div>
-                            </div>  
-                            
-                         </div>               
-                    <div id="pro" class="mt-6">
-    
+                            </div>
+
+                         </div>
+                    <div id="pro4" class="mt-6">
+
                     </div>
                 </div>
                 <div class="brg-menu">
@@ -379,7 +379,49 @@
               </div>
           </div>
         </footer>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+            const cartSidebar = document.getElementById('pro4');
+            const panier = getPanier();
+        
+            panier.forEach(product => {
+                const total = product.quantity * product.price;
+                const productDiv = document.createElement('div');
+                productDiv.className = 'p-4 border rounded-md mb-4 bg-white shadow-md ';
+                const abbreviatedName = product.name.substring(0, 3);
+                productDiv.innerHTML = `
+                    <div class="flex justify-between  ">
+                        <div class="text-black w-4 font-bold"title="${product.name}">${abbreviatedName}</div>
+                        <div class="text-black">${product.quantity}</div>
+                        <div class="text-black">$${total.toFixed(2)}</div>
+                    </div>
+                `;
+        
+                cartSidebar.appendChild(productDiv);
+            });
+        
+            updateTotalPrice();
+        });
+        let popup4 = document.getElementById("popup4");
 
+      function openPopup4() {
+        popup4.style.display = 'flex';
+        const cartSidebar = document.getElementById('pro4');
+        const totalsidebar = document.getElementById('total-price');
+
+        cartSidebar.innerHTML = '';
+         totalsidebar.innerHTML = '$0.00';
+
+        // Clear the cart data in local storage
+        localStorage.removeItem('panier');
+        console.log("khadam");
+    }
+
+    function closePopup4() {
+        popup4.style.display = 'none';
+        console.log("conge");
+    }
+          </script>
 
 
     <script src="panier.js" ></script>
